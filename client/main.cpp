@@ -5,7 +5,6 @@
 #include <chrono>
 #include "chat/client.h"
 
-
 int main()
 {
     chat::client::CollbackRead_t onReadData = [](chat::buffer_t::const_iterator lit, chat::buffer_t::const_iterator rit) -> void

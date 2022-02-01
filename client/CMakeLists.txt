@@ -1,6 +1,6 @@
 add_library(clientLib STATIC
     include/chat/client.h
-    client.cpp)
+    src/client.cpp)
 
 if (WIN32)
     target_link_libraries(clientLib ws2_32)
