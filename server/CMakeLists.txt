@@ -10,13 +10,7 @@ add_library(serverLib
     src/server.cpp
     )
 
-if (WIN32)
-    target_link_libraries(serverLib ws2_32 wsock32)
-endif()
-
-if (UNIX)
-    target_link_libraries(serverLib PUBLIC pthread)
-endif()
+target_link_libraries(serverLib ASIO::ASIO)
 target_include_directories(serverLib PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/include)
 
 add_executable(server main.cpp)
